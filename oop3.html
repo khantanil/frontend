@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oop concept</title>
+</head>
+
+<body>
+    <h1>object in javascript</h1> <br>
+    <script>
+        // Create Object
+        var student = new Object({
+            name: "Jeet",
+            id: 123456,
+            branch: "CE",
+            sem: 4,
+
+            //Create Method
+            submit: function () {
+                console.log(this.name, " ", this.id, " ", this.branch, " ", this.sem);
+            }
+
+        });
+
+
+        //how to access instance variable of the object 
+        console.log("before changing value");
+        student.submit();
+
+        //how to change  instance variable of the object 
+        student.name = "Jp";
+        student.id = 111111,
+        student.branch = "ME",
+        student.sem = 2,
+
+        console.log("after changing value");
+        student.submit(); // calling method of object
+
+
+    </script>
+</body>
+
+</html>

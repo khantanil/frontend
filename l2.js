@@ -1,0 +1,1 @@
+alert("This is example of external javascript file")

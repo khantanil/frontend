@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .error
+        {
+            background-color: yellow;
+            color:red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple Interest Calculator</h1> <hr>
+    <form method="post" action  ="success.html" id="form1">
+        <table align="center" border="2" cellpadding="10" width="70%">
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="number" name="amount" id="amount" class="myinput">
+                </td>
+                <td width="50%" id="amount_td">
+
+                </td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td>
+                    <input type="number" name="rate" id="rate" class="myinput">
+                </td>
+                <td id="rate_td">
+
+                </td>
+            </tr>
+            <tr>
+                <td>Year</td>
+                <td>
+                    <input type="number" name="year" id="year" class="myinput">
+                </td>
+                <td id="year_td"></td>
+            </tr>
+          
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="submit" value="Calculate Interest" id="btnsubmit"  />
+                    <input type="reset" value="clear all" id="btnclear"  />
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        var CheckInput = function(ActiveControl,ErrorMessage)
+        {
+            var errortd = ActiveControl.id + "_td";
+            if(ActiveControl.value=="")
+            {
+                document.getElementById(errortd).innerHTML = ErrorMessage;
+                document.getElementById(errortd).className = "error";
+            }
+            else 
+            {
+                document.getElementById(errortd).innerHTML = "";
+                document.getElementById(errortd).className = "";
+            }
+        }
+        var myinputs = document.getElementsByClassName("myinput"); //return array
+        var index;
+        for(index=0;index<myinputs.length;index=index+1)
+        {
+            myinputs[index].onblur = function(){
+                var message = this.id + " can not be blank";
+                // console.log('event triggered....',myinputs[index].id);
+                CheckInput(this,message);
+            }
+        }
+    </script>
+</body>
+</html>

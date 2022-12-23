@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center"> Simple Mathematic Calculator in Javascript</h1> <hr>
+    <table  align="center" border="2" cellpadding="10">
+        <tr align="center">
+            <td >Number-1</td>
+            <td>
+                <input type="number" name="num1" id="n1">
+            </td>
+        </tr>
+        <tr align="center" margin="3">
+            <td >Number-2</td>
+            <td>
+                <input type="number" name="num2" id="n2">
+            </td>
+        </tr>
+        <tr >
+            <td colspan="2">
+                <input type="button" id="add" value="addition" onclick="Calc(this.id,event,value)">
+                <input type="button" id="sub" value="substraction"  onclick="Calc(this.id,event,value)">
+                <input type="button" id="mul" value="multiplication"  onclick="Calc(this.id,event,value)">
+                <input type="button" id="div" value="division"  onclick="Calc(this.id,event,value)">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center" id="output">
+                <b>Output will be displayed here</b>
+            </td>
+        </tr>
+    </table>
+</body>
+
+<script>
+    function Calc(BtnId,event,BtnValue)
+    {
+        let num1 = document.getElementById("n1");  //num1 has reference of html tag whose id is n1
+        let num2 = document.getElementById("n2");
+        let number1 = parseInt(num1.value);  //num1.value return input given by user in number1  
+        let number2 = parseInt(num2.value); 
+        console.log(number1,number2,BtnId);
+
+        var res; // This is null at that time
+        
+        if(BtnId=="add")
+        {
+            res = number1 + number2;
+        }
+        else if(BtnId=="sub")
+        {
+            res = number1 - number2;
+        }
+        else if(BtnId=="mul")
+        {
+            res = number1 * number2;
+        }
+        else if(BtnId=="div")
+        {
+            res = number1 / number2;
+        }
+
+        var op = document.getElementById("output"); //op variable has reference of html tag whose id is output
+        op.innerHTML = res; //it will change text of op variable
+    }
+</script>
+</html>

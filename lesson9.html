@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Function in Javascript part-1</h2>
+    <hr>
+
+    <script>
+        // user defined function
+        // There are four types of function
+
+        // 1.without argument without return value
+        function Greet() {
+            alert("Thank you....");
+        }
+
+        // 2.with argument without return value
+        function SayHi(firstname, lastname) {
+            alert("Your fullname is " + firstname + " " + lastname);
+        }
+
+        // 3.without argument with return value
+        function GetDate() {
+            let date = new Date();
+            let CurrentDate = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+            return CurrentDate;
+        }
+
+        // 4.with argument with return value
+        function GetCube(number) {
+            let cube = number * number * number;
+            return cube;
+        }
+
+
+        // Function calling
+        // Greet();
+
+        // SayHi("Anil", "Khant");
+
+        // var getdate = GetDate();
+        // alert(getdate);
+
+        // var number = 3;
+        // var cube = GetCube(number);
+        // alert(`cube is ${cube} `)
+
+
+
+
+        // Various example of function
+
+        /*
+        function add(num1, num2) {
+            return num1 + num2
+        }
+        document.write(add(4, 5));
+        */
+
+
+        /*
+         function myFunction(p1, p2) {
+              return p1 * p2;
+          }
+
+          alert(myFunction(4,5))
+       */
+
+
+
+
+        /*
+        function myFunction(a, b) {
+           return a * b;           
+        }
+        let x = myFunction(4, 3);  
+        alert(x)
+        */
+
+
+
+        /*
+        function toCelsius(fahrenheit) {
+            return (5 / 9) * (fahrenheit - 32);
+        }
+        document.write("The temperature is " + toCelsius(77) + " Celsius");
+        */
+
+
+        let add = (a,b) => a+b;
+        document.write(add(3,4));
+
+
+
+    </script>
+</body>
+
+</html>
