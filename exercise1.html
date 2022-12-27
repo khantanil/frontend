@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="post" action="successpage.html" id="form1" style="padding-top:200px;">
+        <table align="center" border="2" cellpadding="10" width="16%">
+            <tr>
+                <td>Amount</td>
+                <td>
+                    <input type="number" name="amount" id="amount">
+                </td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Rate</td>
+                <td>
+                    <input type="number" name="rate" id="rate">
+                </td>
+
+                </td>
+            </tr>
+            <tr>
+                <td>Year</td>
+                <td>
+                    <input type="number" name="year" id="year">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="3" align="center">
+                    <input type="button" value="SimpleInterest" id="SimpleInterest" />
+                    <input type="button" value="CompoundInterest" id="SimpleInterest" />
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" id="output">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        class Calculator {
+
+            constructor(amount, rate, year) {
+                this.amount = amount;
+                this.rate = rate;
+                this.year = year;
+                console.log("constructor called");
+
+            }
+
+            getSimpleInterest() {
+                let simpleInterest = (this.amount * this.rate * this.year) / 100;
+                return simpleInterest;
+            }
+
+            getCompoundInterest(){
+                let A = this.amount * (Math.pow((1+this.rate/100),this.time));
+                let compoundInterest = A - this.amount;
+                return compoundInterest;
+                // console.log("compound interest is " + CompoundInterest);
+            }
+        }
+
+        simpleinterest = document.getElementById("SimpleInterest");
+        simpleinterest.addEventListener("click", function () {
+            var amount, rate, year;
+            amount = document.getElementById("amount").value;
+            rate = document.getElementById("rate").value;
+            year = document.getElementById("year").value;
+
+            var cal1 = new Calculator(amount, rate, year);
+            var simpleinterest = cal1.getSimpleInterest();
+
+            document.getElementById("output").innerHTML = `Simple Interest is = ${simpleinterest}`;
+        }, false);
+
+        compoundinterest = document.getElementById("CompoundInterest");
+        compoundinterest.addEventListener("click", function () {
+            var amount, rate, year;
+            amount = document.getElementById("amount").value;
+            rate = document.getElementById("rate").value;
+            year = document.getElementById("year").value;
+
+            var cal2 =  new Calculator(amount, rate, year);
+            var compoundinterest = cal2.getCompoundInterest();
+
+
+            document.getElementById("output").innerHTML = `Compound Interest is = ${compoundinterest}`;
+        }, false);
+
+
+    </script>
+</body>
+
+</html>
