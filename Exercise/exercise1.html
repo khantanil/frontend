@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form method="post" action="successpage.html" id="form1" style="padding-top:200px;">
+    <form method="post" action="successpage.html" id="form1" style="padding-top:100px;">
         <table align="center" border="2" cellpadding="10" width="16%">
             <tr>
                 <td>Amount</td>
@@ -36,7 +36,11 @@
             <tr>
                 <td colspan="3" align="center">
                     <input type="button" value="SimpleInterest" id="SimpleInterest" />
-                    <input type="button" value="CompoundInterest" id="SimpleInterest" />
+                    <input type="button" value="CompoundInterest" id="CompoundInterest" />
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" id="output">
                 </td>
             </tr>
             <tr align="center">
@@ -94,7 +98,7 @@
             var compoundinterest = cal2.getCompoundInterest();
 
 
-            document.getElementById("output").innerHTML = `Compound Interest is = ${compoundinterest}`;
+            document.getElementById("output2").innerHTML = `Compound Interest is = ${compoundinterest}`;
         }, false);
 
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Multilevel Inheritance</h1> 
+    <hr> <br>
+   
+
+    <form action="" id="myform">
+        <table align="center" border="2px solid black" celpaddng="5" width="20%">
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" height="50px"><b>Multilevel Inheritance</b></td>
+            </tr>
+            <tr>
+                <td style="padding: 5px 30px;">Enter Grams</td>
+                <td>
+                    <input type="number" id="gram">
+                </td>
+            </tr>
+
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" id="output">
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" id="output2">
+                </td>
+            </tr>
+            <tr align="center">
+                <td colspan="2" style="padding: 5px 30px;" id="output3">
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2" align="center" style="padding: 5px 30px;">
+                    <input type="button" id="kg" value="KG" style="padding: 5px 20px;">
+                    <input type="button" id="ton" value="TON" style="padding: 5px 20px;">
+                    <input type="button" id="megaton" value="MegaTon" style="padding: 5px 20px;">
+                </td>
+
+
+        </table>
+    </form>
+
+    <script>
+
+        class Kg {
+            constructor(gram) {
+                this.gram = gram;
+                console.log("Kg class constructor called");
+            }
+            getKg() {
+                let kg = this.gram / 1000;
+                return kg;
+            }
+        }
+
+        class Ton extends Kg {
+            constructor(gram) {
+                super(gram);
+                console.log("Ton class constructor called");
+            }
+            getTon() {
+                let ton = super.getKg() / 1000;
+                return ton;
+            }
+        }
+
+        class MegaTon extends Ton {
+            constructor(gram) {
+                super(gram);
+                console.log("MegaTon class constructor called");
+            }
+            getMegaTon() {
+                let megaton = super.getTon() / 1000000;
+                return megaton;
+            }
+        }
+
+
+        kilogram = document.getElementById("kg");
+        kilogram.addEventListener("click", function () {
+            var gram;
+            gram = document.getElementById("gram").value;
+
+            var kg1 = new Kg(gram);
+            var kg = kg1.getKg();
+            document.getElementById("output").innerHTML = `Kilogram is = ${kg}`;
+        }, false);
+
+        ton = document.getElementById("ton");
+        ton.addEventListener("click", function () {
+            var gram;
+            gram = document.getElementById("gram").value;
+
+            var t1 = new Ton(gram);
+            var ton = t1.getTon();
+            document.getElementById("output2").innerHTML = `Ton is = ${ton}`;
+        }, false);
+
+        megaton = document.getElementById("megaton");
+        megaton.addEventListener("click", function () {
+            var gram;
+            gram = document.getElementById("gram").value;
+
+            var mt1 = new MegaTon(gram);
+            var megaton = mt1.getMegaTon();
+            document.getElementById("output3").innerHTML = `MegaTon is = ${megaton}`;
+        }, false);
+
+
+
+    </script>
+</body>
+
+</html>
