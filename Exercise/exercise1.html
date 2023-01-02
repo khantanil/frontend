@@ -44,7 +44,7 @@
                 </td>
             </tr>
             <tr align="center">
-                <td colspan="2" style="padding: 5px 30px;" id="output">
+                <td colspan="2" style="padding: 5px 30px;" id="output2">
                 </td>
             </tr>
         </table>
@@ -67,7 +67,7 @@
             }
 
             getCompoundInterest(){
-                let A = this.amount * (Math.pow((1+this.rate/100),this.time));
+                let A = this.amount * (Math.pow((1+this.rate/100),this.year));
                 let compoundInterest = A - this.amount;
                 return compoundInterest;
                 // console.log("compound interest is " + CompoundInterest);
@@ -101,7 +101,12 @@
             document.getElementById("output2").innerHTML = `Compound Interest is = ${compoundinterest}`;
         }, false);
 
+        window.onload = function() {
+        document.getElementById('amount').value = '';
+        document.getElementById('rate').value = '';
+        document.getElementById('year').value = '';
 
+  }
     </script>
 </body>
 
