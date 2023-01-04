@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Object reference and copying</h1>
+    <hr>
+    <p>Use console to see output</p>
+
+    <script>
+        let student = {
+            name: "Anil",
+            age: 20,
+            gender: true
+        }
+
+        let developer = student; // giving a reference of student object to developer  it means if we change student object property or vice versa it will also change property of developer 
+
+        // Before changing value
+        console.log(student);
+        console.log(developer);
+
+        // After changing value
+        developer.name = "Anil Khant";
+        student.age = 30;
+        console.log(student);
+        console.log(developer);
+
+
+    </script>
+</body>
+
+</html>
