@@ -1,0 +1,67 @@
+<!-- https://theeasylearn.github.io/javascript2  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cookies Demo</h1>
+    <h3>How to create cookie and how to get cookie</h3>
+
+    <form action="" method="post">
+        <table border="2" width="40%" cellpadding="10" align="center">
+            <tr>
+                <td>Cookies Name</td>
+                <td>
+                    <input type="text" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>Cookies Value</td>
+                <td>
+                    <input type="text" id="value">
+                </td>
+            </tr>
+            <tr>
+                <td>Days</td>
+                <td>
+                    <input type="text" id="days">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="button" value="Set cookie" id="btnset">
+                    <input type="button" value="Get cookie" id="btnget">
+                    <input type="reset" value="Clear all">
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script src="cookie.js"></script>
+    <script>
+
+        var cookie_name,cookie_value,cookie_days,btnget,btnset;
+
+        cookie_name = document.getElementById("name");
+        cookie_value = document.getElementById("value");
+        cookie_days = document.getElementById("days");
+        btnset = document.getElementById("btnset");
+        btnget = document.getElementById("btnget");
+
+        btnset.addEventListener("click",function(){
+            setCookie(cookie_name.value,cookie_value.value,cookie_days.value);
+        });
+
+        btnget.addEventListener("click",function(){
+            cookie_value.value = getCookie(cookie_name.value)
+        });
+    </script>
+</body>
+
+</html>
