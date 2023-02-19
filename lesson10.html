@@ -9,20 +9,21 @@
 <body>
     <h1>Default argument function in javascript</h1> <hr>
     <script>
-        function GetInterest(amt,rate=10.0,year=2)
+        // function GetInterest(amt,rate=10.0,year=2)
+        var GetInterest = function(amt,rate=10.0,year=2)
         {
             console.log(amt,rate,year);
             let interest = ((amt*rate*year)/100); // Local variable
             return interest;
         }
 
-        var interest = GetInterest(1000,15,3); // Global variable
+        var interest = GetInterest(1000); // Global variable
         console.log(interest);
 
         interest = GetInterest(1000,15);
         console.log(interest);
 
-        interest = GetInterest(1000);
+        interest = GetInterest(1000,15,3);
         console.log(interest);
     </script>
 </body>

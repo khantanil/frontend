@@ -5,7 +5,7 @@ function display(val) {
     return val
 }
 
-function solve() {
+function equal() {
     let x = document.getElementById('output').value
     let y = eval(x);
     document.getElementById('output').value = y

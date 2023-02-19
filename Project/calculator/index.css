@@ -1,9 +1,11 @@
 .container{
+    width: auto;
+
     text-align: center;
     margin-top: 50px;
     border: 2px solid black;
-    width: 25%;
-    margin-left: 570px;
+    /* width: 25%; */
+    /* margin-left: 570px; */
     padding-bottom: 20px;
     border-radius: 10px;
     background-color: aquamarine;
@@ -12,6 +14,7 @@
 table{
     margin: auto;
     margin-top: 10px;
+
 
 }
 
@@ -22,6 +25,7 @@ input{
     border: 3px solid burlywood;
     border-radius: 5px;
 }
+
 button{
     font-size: 25px;
     background-color: burlywood;
@@ -32,7 +36,7 @@ button{
 }
 
 .equal{
-    width: 47%;
+    width:47%;
     /* display: inline; */
 }
 
