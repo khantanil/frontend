@@ -1,0 +1,71 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            height: 100px;
+            width: 100px;
+            margin-top: 10px;
+            background-color: antiquewhite;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="console.log('single click')">click me</button>
+    <button id="btn2">double click on me</button>
+
+    <div class="div1" onmouseover="alert('mouse overed on me'); console.log('mouse over done')">This is div</div>
+
+
+    <script>
+        let btn2 = document.getElementById('btn2');
+        btn2.addEventListener("dblclick",function(){
+            alert('Double clicked');
+            console.log('Double clicked')
+            console.log(object);
+        });
+    </script>
+</body>
+</html>  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Toggle Button</title>
+   
+</head>
+<body>
+    <h1>Background Color Toggle Demo</h1>
+    <button id="changeColor">Change Mode</button>
+
+    <script>
+        // Get the button element
+        const toggleButton = document.getElementById('changeColor');
+        
+        // Set initial color state
+        let isDark = false;
+        
+        // Add click event listener
+        toggleButton.addEventListener('click', function() {
+            // Toggle between two color schemes
+            if (isDark) {
+                document.body.style.backgroundColor = 'white';
+                document.body.style.color = 'black';
+
+            } else {
+                document.body.style.backgroundColor = '#222';
+                document.body.style.color = 'white';
+            }
+            
+            // Flip the state for next click
+            isDark = !isDark;
+        });
+    </script>
+</body>
+</html>

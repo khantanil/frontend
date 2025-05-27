@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Example</title>
+</head>
+<body>
+    <h1>Javascript Object Example</h1>
+    <p id="obj"></p>
+    <p id="obj2"></p>
+    <p id="obj3"></p>
+
+    <script>
+        // 1st way to declare object
+        const car = {
+            type : 'Honda',
+            model : 2020,
+            // property as a array
+            colors : ['white','grey','black'],
+            // Methods
+            price : function(){
+                return "Price of car is " + 30000000
+            },
+            type_modal : function(){
+                return this.type + " " + this.model
+            },
+            // nested object
+            BMDcar : {
+                color : 'red',
+                price : 5000000
+            }
+        }
+        document.getElementById("obj").innerHTML = "The model of car is "  + car.model;
+
+        // 2nd way to declare object
+        const car2 = new Object();
+        car2.type = "Audi",
+        car2.model = "2025"
+        document.getElementById("obj2").innerHTML = "The type of second car is " + car2.type;
+
+        // Accessing object property
+        console.log(car);
+        console.log(car.type);
+        console.log(car.price());
+        console.log(car.type_modal());
+        console.log(car.BMDcar.color);
+        console.log(car2);
+        console.log(car2["model"]);
+
+
+        // Example of object constructor
+        function Person(fname,lname,age){
+            this.firstName = fname,
+            this.lastName = lname,
+            this.age = age
+        }
+
+        const person1 = new Person('Anil','khant','22');
+        const person2 = new Person('Sachin','khant','20');
+        document.getElementById("obj3").innerHTML = person1.firstName + " " + person2.age;
+    </script>
+</body>
+</html>

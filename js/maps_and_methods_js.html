@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript Maps</title>
+</head>
+
+<body>
+    <h1>Example of javascript map and its methods</h1>
+
+    <!-- A Map in JavaScript is a collection of key-value pairs, similar to an Object, but with some key advantages.
+
+    Why Use Maps Instead of Objects?
+    ✅ Any data type as keys (objects, functions, numbers, etc.)
+    ✅ Maintains insertion order (objects don’t guarantee order)
+    ✅ Easy to get size (map.size vs. manually counting in objects)
+    ✅ Better performance for frequent additions/deletions -->
+
+    <script>
+        const myMap = new Map([
+            ['apple', 'red'],
+            ['banana', 'yellow'],
+            ['mangoes', 'green']
+        ]);
+
+        console.log(myMap);
+
+        for (let [key, value] of myMap) {
+            document.write(`Color of ${key} is ${value}<br>`);
+        }
+
+        myMap.set('guava','grey');
+        console.log(myMap);
+
+        const color = myMap.get('banana');
+        console.log("Color of banana is: " + color);
+
+        console.log("Size of this map is " + myMap.size)
+        console.log(myMap.has('watermelon'));
+
+        let deletebanana = myMap.delete('banana')
+        console.log(myMap);
+
+        console.log(myMap.clear);
+
+        // keys method
+        for(const key of myMap.keys()){
+            console.log(key)
+        }
+
+        // values method
+        for(const val of myMap.values()){
+            console.log(val)
+        }
+
+
+      
+    </script>
+</body>
+
+</html>
