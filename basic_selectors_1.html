@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax Example</title>
+
+    <style>
+
+        #p1 {
+            background-color: aquamarine;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 20px;
+        }
+
+        #p2 {
+            background-color: rgb(176, 177, 246);
+            border: 1px solid black;
+            margin: 10px;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JQuery Basics Example of Selectors</h1>
+
+    <div class="container">
+        <div id="p1">
+            <h2>Paragraph 1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi nam aut nulla
+                incidunt
+                voluptatem hic excepturi.</p>
+        </div>
+
+        <div id="p2">
+            <h2>Paragraph 2</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio maxime odio nisi inventore, rem
+                illum
+                aut excepturi molestias sapiente asperiores.</p>
+        </div>
+
+        <div class="div">
+            <ul id="list">
+                <li>Apple</li>
+                <li class="test">Banana</li>
+                <li>Orange</li>
+                <li class="test">Mango</li>
+                <li>Watermelon</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            let content = $('#p1').html();
+            console.log(content);
+
+            let content2 = $('#p2').html();
+            console.log(content2)
+
+            // $('#list').css('color','green');
+            $('.test').css('color', 'red')
+            $('ul li:even').css('color', 'blue')
+            $('li:first').css('border', '2px solid red');
+            // $('li').css('list-style-type','none')
+            $('ul li:eq(3)').css('background-color', 'yellow')
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            text-align: center;
+        }
+
+        #box {
+            border: 2px solid #333;
+            padding: 20px;
+            width: 500px;
+            margin: 0px auto;
+            text-align: left;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 0px 5px;
+            border: 1px solid #999;
+        }
+
+        .test1 {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        .test2 {
+            background-color: blue;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>jQuery Class Methods</h1>
+        <div id="box">
+            <h2>Test Box</h2>
+            <p>Lorem ipsum <span>dolor sit amet</span>, consectetur.</p>
+        </div>
+        <br>
+        <button id="addbutton">Add Class</button>
+        <button id="removebutton">Remove Class</button>
+        <button id="togglebutton">Toggle Class</button>
+        <button id="addcssbutton">AddCss</button>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#addbutton').click(function () {
+                $('#box').addClass('test1')
+            });
+
+            $('#removebutton').click(function () {
+                $('#box').removeClass('test1')
+            });
+
+            $('#togglebutton').click(function () {
+                $('#box').toggleClass('test2')
+            });
+
+            // To add css
+            $('#addcssbutton').click(function(){
+                $('#box').css({'background-color':'yellow','color':'green'})
+            });
+        });
+    </script>
+</body>
+
+</html>

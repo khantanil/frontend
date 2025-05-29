@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        .row {
+            border: 2px solid black;
+            background-color: aquamarine;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+
+        .row2 {
+            margin-top: 10px;
+        }
+
+        button {
+            width: auto;
+            padding: 5px;
+            margin: 0px 5px;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row" id="heading">
+            <h1>This is Text</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus reprehenderit quibusdam adipisci
+                magnam ea iure voluptates iusto quo pariatur error earum, soluta explicabo illo a in suscipit ullam
+                sapiente dicta iste, aliquam incidunt animi, numquam quos? Corporis, suscipit? Explicabo saepe eos
+                aspernatur? Fuga pariatur explicabo beatae odit blanditiis aspernatur maxime! Rem repellat atque iure ut
+                nihil voluptatum perferendis!</p>
+        </div>
+        <button class="hidebtn">Hide</button>
+        <button class="showbtn">Show</button>
+        <button class="togglebtn">Toggle</button>
+
+        <div class="row2">
+            <button class="fadeout">FadeOut</button>
+            <button class="fadein">FadeIn</button>
+            <button class="fadetogglebtn">FadeToggle</button>
+            <button class="fadetobtn">Fade To</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            $('.hidebtn').click(function () {
+                $('#heading').hide(1000, function () {
+                    console.log("Now it is hidden...")
+                });
+            });
+
+            $('.showbtn').click(function () {
+                $('#heading').show(1000, function () {
+                    console.log("Now it is shown....")
+                });
+            });
+
+            $('.togglebtn').click(function () {
+                $('#heading').toggle(1000);
+            });
+
+            // for giving fade effect
+            
+            $('.fadeout').click(function () {
+                $('#heading').fadeOut(2000)
+            });
+
+            $('.fadein').click(function () {
+                $('#heading').fadeIn(2000)
+            });
+
+            $('.fadetogglebtn').click(function () {
+                $('#heading').fadeToggle(2000)
+            });
+
+            $('.fadetobtn').click(function () {
+                $('#heading').fadeTo(2000,0.5,function(){
+                    console.log("fade to is completed now...")
+                })
+            });
+        })
+    </script>
+</body>
+
+</html>

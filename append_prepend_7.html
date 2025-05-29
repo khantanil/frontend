@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+       
+        #p1 {
+            border: 2px solid black;
+            background-color: aquamarine;
+            padding: 20px;
+            width: 50%;
+        }
+        button{
+            margin-top: 10px;
+            padding: 5px;
+            background-color: rgb(175, 241, 93);
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Example of append/prepend, after/before and empty/remove Methods</h1>
+        <div id="p1" class="test">
+            <h2>Paragraph 1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi nam aut nulla
+                incidunt voluptatem orem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi
+                nam aut nulla
+                </p>
+             
+        </div>
+        <button class="append">Append</button>
+        <button class="prepend">Prepend</button>
+        <button class="after">After</button>
+        <button class="before">Before</button>
+        <button class="remove">Remove</button>
+        <button class="empty">Empty</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script>
+            // The jQuery append() method inserts content AT THE END of the selected HTML elements.
+            // The jQuery prepend() method inserts content AT THE BEGINNING of the selected HTML elements.
+            // The jQuery after() method inserts content AFTER the selected HTML elements.
+            // The jQuery before() method inserts content BEFORE the selected HTML elements.
+            // The jQuery remove() method removes the selected element(s) and its child elements.
+            // The jQuery empty() method removes the child elements of the selected element(s).
+            
+          $(document).ready(function(){
+            $('.append').click(function(){
+                $('#p1').append("<h2>Appended Text</h2>")
+            });
+             $('.prepend').click(function(){
+                $('#p1').prepend("<h2>Prepended Text</h2>")
+            });
+
+            $('.after').click(function(){
+                $('#p1').after("<h2>Content added after specific targeted element</h2>")
+            });
+            $('.before').click(function(){
+                $('#p1').before("<h2>Content added before specific targeted element</h2>")
+            });
+
+              $('.remove').click(function(){
+                $('#p1').remove();
+            });
+
+              $('.empty').click(function(){
+                $('#p1').empty()
+                // $('#p1 h2').empty()
+            });
+          });
+        </script>
+</body>
+
+</html>

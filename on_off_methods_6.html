@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            /* display: flex;
+            flex-direction: column;
+            align-items: center; */
+           
+        }
+
+        #p1 {
+            border: 2px solid black;
+            background-color: aquamarine;
+            padding: 20px;
+            width: 50%;
+        }
+        .btn{
+            margin-top: 10px;
+            padding: 5px;
+            background-color: rgb(175, 241, 93);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Example of On/Off Methods</h1>
+        <div id="p1" class="test">
+            <h2>Paragraph 1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi nam aut nulla
+                incidunt voluptatem orem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi
+                nam aut nulla
+                </p>
+             
+        </div>
+        <button class="btn">Remove Event</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#p1').on({
+                    click:function(){
+                        $(this).css('background-color','green')
+                    },
+                     mouseover:function(){
+                        $(this).css('background-color','yellow')
+                    },
+                     mouseout:function(){
+                        $(this).css('background-color','blue')
+                    },
+                });
+
+                $('button').click(function(){
+                    $('#p1').off('mouseover mouseout')
+                })
+            });
+        </script>
+</body>
+
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select {
+      margin-top: 5px;
+      padding: 5px;
+      width: 200px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 5px 15px;
+    }
+  </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Form Events</h1>
+
+        <form id="myForm">
+            <label>Name
+                <input type="text" name="name" id="name" />
+            </label>
+
+            <label>Class
+                <input type="text" name="class" id="class" />
+            </label>
+
+            <label>Country
+                <select name="country" id="country">
+                    <option value="India">India</option>
+                    <option value="USA">USA</option>
+                    <option value="UK">UK</option>
+                </select>
+            </label>
+
+            <button type="submit">Submit</button>
+        </form>
+
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#name,#class,#country').focus(function(){
+                    $(this).css('background-color','lime')
+                });
+
+                $('#name,#class,#country').blur(function(){
+                    $(this).css('background-color','')
+                });
+
+                // Change always works with selectbox not input
+                $('#country').change(function(){
+                    $(this).css('background-color','red')
+                });
+
+                // Select always works input field not select box
+                $('#name,#class').select(function(){
+                    alert("You selected some text")
+                });
+
+                // $('#myForm').submit(function(event){
+                //     event.preventDefault();
+                //     alert('Form Submitted successfully...')
+                // });
+
+                // Get event
+                $('#myForm').submit(function(){
+                    let nameValue = $('#name').val();
+                    let countryValue = $('#country').val();
+                    alert("Hello " + nameValue + " You are from " + countryValue);
+                })
+
+                // Set event for setting value input of form
+                $('#name').val('Sachin');
+                $('#class').val('Btech');
+            });
+        </script>
+</body>
+
+</html>
