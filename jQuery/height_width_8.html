@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mouse Events</title>
+    <style>
+        .container {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #p1 {
+            background-color: aquamarine;
+            padding: 20px;
+            width: 50%;
+            margin: 20px;
+            border: 15px solid black;
+        }
+
+        button {
+            padding: 5px;
+            margin: 0px 5px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Example of jQuery Width and Height methods</h1>
+        <div id="p1" class="test ">
+            <h2>Paragraph 1</h2>
+            <p>Lorem ipsum dolor, <span> sit amet consectetur adipisicing</span> elit. Non eos beatae unde. Modi nam aut
+                nulla
+                incidunt voluptatem orem ipsum dolor, sit amet consectetur adipisicing elit. Non eos beatae unde. Modi
+            </p>
+        </div>
+        <div><button class="heightbtn">Height</button>
+            <button class="widthbtn">Width</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('.widthbtn').click(function(){
+                let width = $('#p1').innerWidth(); // Includes padding but excludes border and margin
+                console.log("Width : " + width);
+                let innerwidth = $('#p1').outerWidth();
+                console.log("InnerWidth : " + innerwidth);
+                let outerwidth = $('#p1').outerWidth();
+                console.log("OuterWidth : " + outerwidth);
+                 let outerwidthtrue = $('#p1').outerWidth(true);
+                console.log("OuterWidth(true) : " + outerwidthtrue);
+                let height = $('#p1').height();
+                console.log("height :" +height);
+                let innerheight = $('#p1').innerHeight();
+                console.log("InnerHeight : " +innerheight);
+            });
+        });
+    </script>
+</body>
+
+</html>

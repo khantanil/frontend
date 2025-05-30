@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Syntax Example</title>
+
+    <style>
+        .test {
+            background-color: aquamarine;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 20px;
+            width: 20%;
+            height: 200px;
+            text-align: center;
+            position: relative;
+        }
+
+        button{
+            margin: 10px;
+            padding: 5px;
+            font-size: larger;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>JQuery Animate Event Example </h1>
+
+    <div class="container">
+        <div class="test">
+            <h3>Hello Anil</h3>
+        </div>
+        <button id="animate">Animate</button>
+    </div>
+
+    <!-- cdn -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('#animate').click(function(){
+                // $('.test').animate({
+                //     left : '150px',
+                //     width : '+=500px',
+                //     top : '200px'
+                // 
+                // });
+
+                
+                //  $('.test').animate({
+                //     height : 'toggle',
+                // });
+
+                $('.test').animate({left : '300px',fontSize : '25px'},3000);
+                $('.test').animate({top : '300px',fontSize : '10px'},3000);
+            })
+        })
+    </script>
+</body>
+
+</html>

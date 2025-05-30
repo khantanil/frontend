@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>jQuery Each Method</h1>
+        <ul>
+            <li>Apple</li>
+            <li>Banana</li>
+            <li>Mangoes</li>
+            <li>Watermelon</li>
+            <li>Orange</li>
+        </ul>
+
+        <div class="row">
+            <ol>
+                <li>First</li>
+                <li>Second</li>
+                <li>Third</li>
+            </ol>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(function(){
+            $('li').each(function(){
+                $(this).css('color','red')
+                console.log($(this).text())
+            })
+        })
+    </script>
+</body>
+
+</html>
