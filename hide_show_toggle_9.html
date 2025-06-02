@@ -29,6 +29,7 @@
 <body>
 
     <div class="container">
+        <h1>Example of hide/show, fade and sliding event </h1>
         <div class="row" id="heading">
             <h1>This is Text</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus reprehenderit quibusdam adipisci
@@ -46,6 +47,12 @@
             <button class="fadein">FadeIn</button>
             <button class="fadetogglebtn">FadeToggle</button>
             <button class="fadetobtn">Fade To</button>
+        </div>
+        <div class="row3" style="margin-top: 10px;">
+            <button class="slideup">SlideUp</button>
+            <button class="slidedown">SlideDown</button>
+            <button class="slidetogglebtn">Slide Toggle</button>
+
         </div>
     </div>
 
@@ -70,7 +77,7 @@
             });
 
             // for giving fade effect
-            
+
             $('.fadeout').click(function () {
                 $('#heading').fadeOut(2000)
             });
@@ -84,9 +91,24 @@
             });
 
             $('.fadetobtn').click(function () {
-                $('#heading').fadeTo(2000,0.5,function(){
+                $('#heading').fadeTo(2000, 0.5, function () {
                     console.log("fade to is completed now...")
                 })
+            });
+
+            // For sliding effect
+            $('.slideup').click(function () {
+                $('#heading').slideUp("fast")
+            });
+
+             $('.slidedown').click(function () {
+                $('#heading').slideDown(3000,function(){
+                   console.log("hello")
+                })
+            });
+
+             $('.slidetogglebtn').click(function () {
+                $('#heading').slideToggle()
             });
         })
     </script>

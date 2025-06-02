@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="second mt-3">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th><input type="checkbox" name="Headercheck" id="Headercheck" class="header-check">
+                        </th>
+                        <th>FirstName</th>
+                        <th>LastName</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Anil</td>
+                        <td>Khant</td>
+                        <td>anil123@gmail.com</td>
+                        <td>1122334455</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Jeet</td>
+                        <td>Vegad</td>
+                        <td>jeet111@gmail.com</td>
+                        <td>9988776655</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Jp</td>
+                        <td>rathod</td>
+                        <td>jp5404@gmail.com</td>
+                        <td>7788990011</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Vivek</td>
+                        <td>Vegad</td>
+                        <td>vivek666@gmail.com</td>
+                        <td>9011223344</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Meet</td>
+                        <td>Shah</td>
+                        <td>shah1@gmail.com</td>
+                        <td>8877665544</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Rajdip</td>
+                        <td>Gohel</td>
+                        <td>gohel222@gmail.com</td>
+                        <td>6655443322</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Harsh</td>
+                        <td>Patel</td>
+                        <td>harsh222@gmail.com</td>
+                        <td>7788001122</td>
+                    </tr>
+                    <tr>
+                        <td><input type="checkbox" class="row-check"></td>
+                        <td>Chirag</td>
+                        <td>Kanani</td>
+                        <td>chirag123@gmail.com</td>
+                        <td>9900112233</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="first mt-3 text-end">
+            <button class="btn btn-danger btn-lg deletebtn">Delete</button>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('.deletebtn').hide();
+
+            // Header checkbox
+            $('#Headercheck').click(function () {
+                let checked = $(this).prop('checked');
+                $('.row-check').prop('checked', checked);
+                $('.deletebtn').toggle(checked);
+            });
+
+            // Row checkbox
+            $('.row-check').click(function () {
+                let anyChecked = $('.row-check:checked').length > 0;
+                $('.deletebtn').toggle(anyChecked);
+
+                // If all rows are checked, check header too
+                let allChecked = $('.row-check').length === $('.row-check:checked').length;
+                $('#Headercheck').prop('checked', allChecked);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
