@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>
+            Jquery Example
+        </h2>
+       PDF:<input type="checkbox" class="mx-3" name="" id="pdfCheck">
+       PHOTO:<input type="checkbox" class="mx-3" name="" id="photoCheck">
+       VIDEO:<input type="checkbox" class="mx-3" name="" id="videoCheck">
+       AUDIO:<input type="checkbox" class="mx-3" name="" id="audioCheck">
+
+        <div class="row my-2 pdfdiv">
+        <input type="file" class="form-control  w-25" id="pdfInput" class="file" accept=".pdf">
+            <span class="text-danger">You can upload only pdf file</span>
+        
+       </div>
+
+        <div class="row my-2 photodiv">
+            <input type="file" class="form-control  w-25" id="photoInput" accept="image/*">
+            <span class="text-danger">You can upload only image file</span>
+        </div>
+
+        <div class="row my-2 videodiv">
+            <input type="file" class="form-control  w-25" id="videoInput" accept="video/*">
+            <span class="text-danger">You can upload only video file</span>
+        </div>
+
+        <div class="row my-2 audiodiv">
+            <input type="file" class="form-control  w-25" id="audioInput" accept="audio/*">
+            <span class="text-danger">You can upload only audio file</span>
+        </div>
+          
+      
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+
+<script>
+    $(document).ready(function () {
+        $('.pdfdiv, .photodiv, .videodiv, .audiodiv').hide();
+
+        // When any checkbox is clicked
+        $('#pdfCheck, #photoCheck, #videoCheck, #audioCheck').click(function () {
+            // First, hide all file sections
+            $('.pdfdiv, .photodiv, .videodiv, .audiodiv').hide();
+
+            // If the clicked checkbox is checked, uncheck others and show the matching section
+            if ($(this).is(':checked')) {
+                // Uncheck all other checkboxes
+                $('#pdfCheck, #photoCheck, #videoCheck, #audioCheck').not(this).prop('checked', false);
+
+                // Show the corresponding div
+                if (this.id === 'pdfCheck') {
+                    $('.pdfdiv').show(1000);
+                } else if (this.id === 'photoCheck') {
+                    $('.photodiv').show(1000);
+                } else if (this.id === 'videoCheck') {
+                    $('.videodiv').show(1000);
+                } else if (this.id === 'audioCheck') {
+                    $('.audiodiv').show(1000);
+                }
+            }
+        });
+    });
+</script>
+
+
+
+</body>
+
+</html>

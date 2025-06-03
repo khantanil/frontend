@@ -101,7 +101,7 @@
         $(document).ready(function () {
             $('.deletebtn').hide();
 
-            // Header checkbox
+            
             $('#Headercheck').click(function () {
                 let checked = $(this).prop('checked');
                 $('.row-check').prop('checked', checked);
@@ -109,7 +109,6 @@
                 
             });
 
-            // Row checkbox
             $('.row-check').click(function () {
                 let anyChecked = $('.row-check:checked').length > 0;
                 $('.deletebtn').toggle(anyChecked);
@@ -117,7 +116,7 @@
                 // If all rows are checked, check header too
                 let allChecked = $('.row-check').length === $('.row-check:checked').length;
                 $('#Headercheck').prop('checked', allChecked);
-                console.log("hi");
+                
             });
         });
     </script>
